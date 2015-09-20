@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class CsvWriterCustom implements CsvWriter {
 
-	private static final String COMMA_DELIMITER = ",";
+	//private static final String COMMA_DELIMITER = ",";
 	private static final String NEW_LINE_SEPARATOR = "\n";
 
 	private static final Logger LOGGER = Logger.getLogger(CsvWriterCustom.class.toString());

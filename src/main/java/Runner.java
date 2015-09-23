@@ -15,6 +15,7 @@ public class Runner {
 		CsvWriterCustom writerCustom = new CsvWriterCustom();
 
 		writerCustom.writeToSCVRandomData(fileName, 100000);
+
 		CsvReaderCustom readerCustom = new CsvReaderCustom();
 		List<ProductType> productTypes = readerCustom.readFromFile("CsvData.csv");
 	}

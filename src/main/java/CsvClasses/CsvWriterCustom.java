@@ -18,16 +18,20 @@ public class CsvWriterCustom implements CsvWriter {
 
 	private static final Logger LOGGER = Logger.getLogger(CsvWriterCustom.class.toString());
 
-	private static final String FILE_HEADER = "Name,DateManufacture,IdProduct,Price,ExpirationDate";
+	private static final String FILE_HEADER = "Name,DateManufacture,IdProduct";
 
+	public CsvWriterCustom () {
+
+	}
 
 	public void writeProductListToSCV (String destinationFileName, List<ProductType> newData, boolean appendToFile) throws FileNotFoundException {
-		LOGGER.info("Start .writeProductToCSV");
+		LOGGER.info("Start write product to csv");
 		for (int i = 0; i < newData.size(); i++) {
 
 			if (appendToFile) {
 				try {
 					File file = new File(destinationFileName);
+					LOGGER.info("File created");
 					if (!file.exists()) {
 						try {
 							file.createNewFile();
@@ -61,7 +65,7 @@ public class CsvWriterCustom implements CsvWriter {
 
 		for (int i = 0; i < lineValue; i++) {
 
-			product.add(new ProductType(String.format("Product%d", i), String.format("0%d/09/2015", i), (double) 10 + i, 100 + i, String.format("0%d/09/%d", i, (2015 + i))));
+			product.add(new ProductType(String.format("Product%d", i), String.format("0%d/09/2015", i), (double) 10 + i));
 
 		}
 		FileWriter fileWriter = null;

@@ -11,25 +11,22 @@ public class ProductType implements Comparable {
 	private String name;
 	private String dateManufacture;
 	private double price;
-	private int idProduct;
-	private String expirationDate;
+
 
 	public ProductType () {
 
 		this.name = null;
 		this.dateManufacture = null;
 		this.price = 0.0;
-		this.idProduct = 0;
-		this.expirationDate = null;
+
 	}
 
-	public ProductType (String name, String dateManufacture, double price, int idProduct, String expirationDate) {
+	public ProductType (String name, String dateManufacture, double price) {
 
 		this.name = name;
 		this.dateManufacture = dateManufacture;
 		this.price = price;
-		this.idProduct = idProduct;
-		this.expirationDate = expirationDate;
+
 	}
 
 	public int compareTo (Object o) {
@@ -67,25 +64,6 @@ public class ProductType implements Comparable {
 		this.price = price;
 	}
 
-	public int getIdProduct () {
-
-		return idProduct;
-	}
-
-	public void setIdProduct (int idProduct) {
-
-		this.idProduct = idProduct;
-	}
-
-	public String getExpirationDate () {
-
-		return this.expirationDate;
-	}
-
-	public void setExpirationDate (String expirationDate) {
-
-		this.expirationDate = expirationDate;
-	}
 
 	// сравнения по полям
 
@@ -103,21 +81,6 @@ public class ProductType implements Comparable {
 
 	}
 
-	public int compareToIdProduct (ProductType productType) {
-
-		if (this.idProduct > productType.idProduct) {
-			return 1;
-		}
-		if (this.idProduct < productType.idProduct) {
-			return -1;
-		}
-		return 0;
-	}
-
-	public int compareExpirationDate (ProductType productType) {
-
-		return this.expirationDate.compareTo(productType.expirationDate);
-	}
 
 	public int compareToPrice (ProductType productType) {
 
@@ -133,23 +96,13 @@ public class ProductType implements Comparable {
 	@Override
 	public String toString () {
 
-		return "Product: " + this.name + " Date Manufacture: " + this.dateManufacture + " | Price: " + this.price
-				       + " | Id product: " + this.idProduct + " | Expiration date: " + this.expirationDate;
+		return "Product: " + this.name + " Date Manufacture: " + this.dateManufacture + " | Price: " + this.price;
 	}
 
 	//метод который формирует строку для записи в csv file
 	public String toCsvString () {
 
-		return this.name + "," + this.dateManufacture + "," + this.price + "," + this.idProduct + "," + this.expirationDate + "\n";
+		return this.name + "," + this.dateManufacture + "," + this.price +"\n";
 	}
 
-	public boolean liqvidProd (ProductType p) throws IOException {
-		if (p.name == null && p.name == "0") {
-			throw new IOException("Херовый продукт");
-
-		}
-
-		return true;
-
-	}
 }

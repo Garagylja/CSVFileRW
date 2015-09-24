@@ -19,8 +19,6 @@ public class CsvReaderCustom implements CsvReader {
 	private static final int PRODUCT_NAME = 0;
 	private static final int PRODUCT_DATE_MANUF = 1;
 	private static final int PRODUCT_PRICE = 2;
-	private static final int PRODUCT_ID = 3;
-	private static final int PRODUCT_EXPIR_DATE = 4;
 
 	private static final Logger LOGGER = Logger.getLogger(CsvReaderCustom.class.toString());
 
@@ -57,7 +55,7 @@ public class CsvReaderCustom implements CsvReader {
 				if (tokens.length > 0) {
 					//Create a new ProductType object and fill his  data
 
-					ProductType products = new ProductType(tokens[PRODUCT_NAME], tokens[PRODUCT_DATE_MANUF], Double.parseDouble(tokens[PRODUCT_PRICE]), Integer.parseInt(tokens[PRODUCT_ID]), tokens[PRODUCT_EXPIR_DATE]);
+					ProductType products = new ProductType(tokens[PRODUCT_NAME], tokens[PRODUCT_DATE_MANUF], Double.parseDouble(tokens[PRODUCT_PRICE]));
 
 					productList.add(products);
 

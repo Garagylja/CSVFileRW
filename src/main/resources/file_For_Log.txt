@@ -7,3 +7,6 @@
 2015-09-23 22:54:25.685 INFO  CsvWriterCustom:28 - Start write product to csv
 2015-09-23 22:54:25.694 INFO  CsvWriterCustom:34 - File created
 2015-09-23 22:54:25.702 INFO  CsvReaderCustom:30 - Start .readFromFile
+2015-10-16 11:03:45.606 INFO  CsvWriterCustom:28 - Start write product to csv
+2015-10-16 11:03:45.621 INFO  CsvWriterCustom:34 - File created
+2015-10-16 11:03:45.640 INFO  CsvReaderCustom:30 - Start .readFromFile
